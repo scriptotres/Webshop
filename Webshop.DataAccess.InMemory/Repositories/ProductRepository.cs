@@ -64,10 +64,11 @@ namespace Webshop.DataAccess.InMemory.Repositories
             return products.AsQueryable();
         }
 
-        public void Delete(string Id)
+        public bool Delete(string Id)
         {
             var productToDelete = FindProduct(Id);
             products.Remove(productToDelete);
+            return true;
         }
     }
 }
